@@ -1,9 +1,16 @@
+import { getBannerData } from '@/actions/event-service';
+import MainBannerSection from '@/components/pages/main/MainBannerSection';
 import React from 'react';
 
-export default function page() {
+export default async function page() {
+  const bannerData = await getBannerData();
+
   return (
     <main>
-      <section>banner</section>
+      <MainBannerSection bannerData={bannerData} />
+      <TrendSection />
+      <EventSection />
+      <NoticeSection />
     </main>
   );
 }
