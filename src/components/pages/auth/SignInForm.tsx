@@ -1,17 +1,20 @@
-'use client'
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { signIn } from "next-auth/react";
-import React from "react";
+'use client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useSpharosSession } from '@/context/SessionContext';
+import { signIn, signOut } from 'next-auth/react';
+import React from 'react';
 
 export default function SignInForm() {
+  console.log(useSpharosSession());
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    console.log("formData", formData);
+    console.log('formData', formData);
     signIn('credentials', {
-        username: formData.get('loginId') as string,
-        password: formData.get('password') as string,
+      username: formData.get('loginId') as string,
+      password: formData.get('password') as string,
+      redirect: true,
     });
   };
   return (
@@ -19,6 +22,12 @@ export default function SignInForm() {
       <Input type="text" name="loginId" placeholder="loginId" />
       <Input type="password" name="password" placeholder="password" />
       <Button type="submit">Sign In</Button>
+      <Button
+        type="button"
+        onClick={() => signOut({ redirect: true, callbackUrl: '/' })}
+      >
+        LogOut
+      </Button>
     </form>
   );
 }

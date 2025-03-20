@@ -1,5 +1,5 @@
 export interface commonResponseType<T> {
-  httpsStatus: string,
+  httpStatus: string;
   isSuccess: boolean;
   message: string;
   code: number;
