@@ -5,7 +5,7 @@ import KakaoProvider from "next-auth/providers/kakao";
 export const options: NextAuthOptions = {
     providers: [
          CredentialsProvider ({
-            name: 'Credentials',
+            name: 'credentials',
             credentials: {
                 username: { label: "Username", type: " text "},
                 password: { label: "Password", type: " password "}
@@ -14,6 +14,7 @@ export const options: NextAuthOptions = {
                 if (!credentials?.username || !credentials?.password) {
                     return null;
             }
+            console.log('credentials', credentials);
             // 회원 로인 api 호출
             return null;
             }
