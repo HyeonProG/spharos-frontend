@@ -1,3 +1,4 @@
+import { commonResponseType, signInDataType } from "@/types/ResponseDataTypes";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import KakaoProvider from "next-auth/providers/kakao";
@@ -15,8 +16,23 @@ export const options: NextAuthOptions = {
                     return null;
             }
             console.log('credentials', credentials);
+            try {
+                const response = await fetch('http://localhost:8080/api/v1/auth/sign-in', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: credentials.username,
+                        password: credentials.password,
+                    }),
+                })
+                const user = (await response.json()) as commonResponseType<signInDataType>;
+                console.log('user', user);
+                return user.result;
+            } catch (error) {
+                console.error('로그인 중 오류 발생', error);
+                return null;
+            }
             // 회원 로인 api 호출
-            return null;
             }
          }),
          KakaoProvider({
