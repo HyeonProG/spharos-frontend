@@ -8,9 +8,6 @@ export default async function page() {
   return (
     <main>
       <MainBannerSection bannerData={bannerData} />
-      <TrendSection />
-      <EventSection />
-      <NoticeSection />
     </main>
   );
 }
