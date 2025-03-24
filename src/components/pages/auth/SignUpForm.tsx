@@ -1,6 +1,8 @@
 // 'use client';
 
+import { Button } from "@/components/ui/button";
 import SignUpFields from "./SignUpFields";
+import OauthLoginButtons from "./OauthLoginButtons";
 
 export default function SignUpForm({
   handleSignUp,
@@ -15,13 +17,13 @@ export default function SignUpForm({
   //   handleSignUp(formData);
   // };
   return (
-    <section>
-      <h1>SignUp page</h1>
-      <form action={handleSignUp}>
+    <section className="px-5 py-10 mx-auto space-y-3">
+      <form action={handleSignUp} className="space-y-3">
         {/* <form onSubmit={handleOnSubmit}> */}
         <SignUpFields />
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
+      <OauthLoginButtons/>
     </section>
   );
 }

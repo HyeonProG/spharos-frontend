@@ -30,12 +30,12 @@ export default function SignUpFields() {
       [name]: value,
     });
     if (!res.success) {
-      const fieldErros: Partial<SignUpStoreStateType> = {};
+      const fieldErrors: Partial<SignUpStoreStateType> = {};
       res.error.errors.forEach((error) => {
         const fieldName = error.path[0] as keyof SignUpStoreStateType;
-        fieldErros[fieldName] = error.message;
+        fieldErrors[fieldName] = error.message;
       });
-      setErrorMessages(fieldErros);
+      setErrorMessages(fieldErrors);
     } else {
       console.log('no error');
     }
