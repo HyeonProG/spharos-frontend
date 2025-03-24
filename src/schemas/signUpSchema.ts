@@ -16,7 +16,7 @@ export const signUpSchema = z.object({
     .string()
     .regex(/^\d{3}-\d{3,4}-\d{4}$/, '전화번호 형식이 아닙니다.'),
   nickname: z.string(),
-  birth: z.date(),
+  birth: z.string(),
   address: z.string(),
   gender: z.enum(['남성', '여성']),
 });

@@ -8,7 +8,7 @@ export async function signUpAction(signUpFormData: FormData) {
     name: signUpFormData.get('name') as string,
     phoneNumber: signUpFormData.get('phoneNumber') as string,
     nickname: signUpFormData.get('nickname') as string,
-    birth: new Date(signUpFormData.get('birth') as string),
+    birth: signUpFormData.get('birth') as string,
     address: signUpFormData.get('address') as string,
     gender: signUpFormData.get('gender') as string,
   };
