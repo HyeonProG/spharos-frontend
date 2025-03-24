@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { SignUpStoreStateType } from '@/types/storeDataTypes';
 import { signUpSchema } from '@/schemas/signUpSchema';
 
-export default function SignUpFeilds() {
+export default function SignUpFields() {
   const [inputValues, setInputValues] = useState<SignUpStoreStateType>({
     email: '',
     password: '',

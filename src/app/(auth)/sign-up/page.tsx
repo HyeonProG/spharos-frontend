@@ -10,6 +10,7 @@ export default async function page() {
   
     return (
       <main>
+        <h1>Sign up page</h1>
         <SignUpForm handleSignUp={handleSignUp} />
       </main>
     );
