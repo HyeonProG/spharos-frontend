@@ -1,7 +1,7 @@
 import cartIcon from '@/components/ui/icons/cartIcon';
 import gnbMenuIcon from '@/components/ui/icons/gnbMenuIcon';
 import searchIcon from '@/components/ui/icons/searchIcon';
-import { gnbMenuType } from '@/types/initialDataTypes';
+import { gnbMenuType, mainTabMenuType } from '@/types/initialDataTypes';
 
 export const navMenuData: gnbMenuType[] = [
   {
@@ -20,3 +20,26 @@ export const navMenuData: gnbMenuType[] = [
     icon: cartIcon,
   },
 ];
+
+export const mainTabMenuData: mainTabMenuType[] = [
+  {
+    id: 1,
+    title: '메인',
+    link: '/',
+  },
+  {
+    id: 2,
+    title: '기획전',
+    link: '/event',
+  },
+  {
+    id: 3,
+    title: '베스트',
+    link: '/best',
+  },
+  {
+    id: 4,
+    title: '마이페이지',
+    link: '/mypage',
+  },
+]
