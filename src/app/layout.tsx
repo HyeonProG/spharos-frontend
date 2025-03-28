@@ -5,6 +5,11 @@ import { getServerSession } from 'next-auth';
 import { options } from './api/auth/[...nextauth]/options';
 import AuthProvider from '@/provider/AuthProvider';
 import AuthContextProvider from '@/provider/AuthContextProvider';
+import {
+  SidebarContext,
+  SidebarContextProvider,
+} from '@/context/SideBarContext';
+import { Sidebar } from '@/components/ui/common/SideBar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,7 +41,12 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <AuthProvider>{children}</AuthProvider> */}
-        <AuthContextProvider isAuth={isAuth}>{children}</AuthContextProvider>
+        <AuthContextProvider isAuth={isAuth}>
+          <SidebarContextProvider>
+            <Sidebar />
+            {children}
+          </SidebarContextProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );

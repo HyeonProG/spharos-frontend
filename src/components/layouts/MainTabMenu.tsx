@@ -2,7 +2,7 @@
 import { mainTabMenuData } from '@/data/initialDatas';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { usePathname} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function MainTabMenu() {
@@ -26,7 +26,7 @@ export default function MainTabMenu() {
 
   return (
     <div>
-      <ul className="grid grid-cols-4 relative">
+      <ul className="grid grid-cols-4 relative  text-center">
         {mainTabMenuData.map((menu, index) => (
           <Link key={menu.id} href={menu.link}>
             <li
@@ -35,7 +35,7 @@ export default function MainTabMenu() {
               }}
               data-state={menu.link === pathName ? 'active' : 'inactive'}
               className={cn(
-                'w-fit py-3 text-nowrap cursor-pointer',
+                'py-3 text-nowrap cursor-pointer',
                 'data-[state=active]:text-blue-500'
               )}
             >

@@ -1,5 +1,5 @@
 import MainHeader from '@/components/layouts/MainHeader';
-import MainTapMenu from '@/components/layouts/MainTapMenu';
+import MainTabMenu from '@/components/layouts/MainTabMenu';
 import React from 'react';
 
 export default function layout({
@@ -8,7 +8,7 @@ export default function layout({
   return (
     <>
       <MainHeader />
-      <MainTapMenu />
+      <MainTabMenu />
       {children}
       <footer> footer</footer>
     </>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function gnbMenuIcon() {
+function gnbMenuIcon({ onClick }: { onClick?: () => void }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,6 +13,7 @@ function gnbMenuIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       className="lucide lucide-menu"
+      onClick={onClick}
     >
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />

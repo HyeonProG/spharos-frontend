@@ -42,4 +42,4 @@ export const mainTabMenuData: mainTabMenuType[] = [
     title: '마이페이지',
     link: '/mypage',
   },
-]
+];

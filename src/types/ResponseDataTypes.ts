@@ -19,3 +19,21 @@ export interface signInDataType {
   name: string;
   uuid: string;
 }
+
+export interface productDataListType {
+  productOptionCode: string;
+  productCode: string;
+}
+
+export interface productCardDataType {
+  productOptionCode: string;
+  productCode: string;
+  productName: string;
+  productPrice: number;
+  productDiscountPrice: number;
+  productImgUrl: string;
+  isBest: boolean;
+  isNew: boolean;
+  isSale: boolean;
+  rank: number;
+}

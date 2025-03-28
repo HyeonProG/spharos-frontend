@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { SignUpStoreStateType } from '@/types/storeDataTypes';
 import { signUpSchema } from '@/schemas/signUpSchema';
 
-export default function SignUpFields() {
+export default function SignUpFeild() {
   const [inputValues, setInputValues] = useState<SignUpStoreStateType>({
     email: '',
     password: '',
@@ -30,12 +30,12 @@ export default function SignUpFields() {
       [name]: value,
     });
     if (!res.success) {
-      const fieldErrors: Partial<SignUpStoreStateType> = {};
+      const fieldErros: Partial<SignUpStoreStateType> = {};
       res.error.errors.forEach((error) => {
         const fieldName = error.path[0] as keyof SignUpStoreStateType;
-        fieldErrors[fieldName] = error.message;
+        fieldErros[fieldName] = error.message;
       });
-      setErrorMessages(fieldErrors);
+      setErrorMessages(fieldErros);
     } else {
       console.log('no error');
     }
