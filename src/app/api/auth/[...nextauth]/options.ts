@@ -32,10 +32,10 @@ export const options: NextAuthOptions = {
 
           const user =
             (await response.json()) as commonResponseType<signInDataType>;
-          console.log('user', user);
+          // console.log('user', user);
           return user.result;
         } catch (error) {
-          console.error('error', error);
+          // console.error('error', error);
         }
         // 회원로그인 api 호출
         return null;

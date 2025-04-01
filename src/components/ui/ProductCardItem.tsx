@@ -8,6 +8,10 @@ export default function ProductCardItem({
   product: productDataListType;
 }) {
   // get data
-  const isAuth = useSpharosSession();
-  return <li>{isAuth && <button>edit</button>}</li>;
+  // const isAuth = useSpharosSession();
+  return (
+    <li className="px-3 py-3 w-full bg-slate-300 text-center">
+      {product.productCode}
+    </li>
+  );
 }
