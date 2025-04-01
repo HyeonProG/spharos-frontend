@@ -18,11 +18,11 @@ export default async function page({
   // }).toString();
   // const products = await getProducts(page, pageSize)
   const products = productDataList as productDataListType[];
-
+  const data = products.slice(0, Number(page) * Number(pageSize));
   // fetch data
   return (
     <main>
-      <ProductList data={products} />
+      <ProductList data={data} page={Number(page)} />
     </main>
   );
 }

@@ -10,7 +10,7 @@ export default function ProductCardItem({
   // get data
   // const isAuth = useSpharosSession();
   return (
-    <li className="px-3 py-3 w-full bg-slate-300 text-center">
+    <li className="px-3 py-10 w-full bg-slate-300 text-center">
       {product.productCode}
     </li>
   );
