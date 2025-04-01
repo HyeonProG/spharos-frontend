@@ -584,3 +584,34 @@ export const productDataList: productDataListType[] = [
     productOptionCode: 'product140_option1',
   },
 ];
+
+export const productListDummyData = [
+  {
+    hasNext: true,
+    page: 1,
+    cursorId: '21',
+    totalCount: 100,
+    productDataList: [
+      {
+        productCode: 'product1',
+        productOptionCode: 'product1_option1',
+      },
+      {
+        productCode: 'product2',
+        productOptionCode: 'product2_option1',
+      },
+      {
+        productCode: 'product3',
+        productOptionCode: 'product3_option1',
+      },
+      {
+        productCode: 'product4',
+        productOptionCode: 'product4_option1',
+      },
+      {
+        productCode: 'product5',
+        productOptionCode: 'product5_option1',
+      },
+    ],
+  },
+];

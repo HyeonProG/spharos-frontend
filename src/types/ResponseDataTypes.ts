@@ -37,3 +37,19 @@ export interface productCardDataType {
   isSale: boolean;
   rank: number;
 }
+
+export interface productListDataType {
+  hasNext: boolean;
+  page: number;
+  cursorId: string;
+  totalCount: number;
+  productList: productCardDataType[];
+}
+
+export interface cartListDataType {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  checked: boolean;
+}

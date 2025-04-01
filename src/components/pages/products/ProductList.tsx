@@ -2,7 +2,7 @@
 import ProductCardItem from '@/components/ui/ProductCardItem';
 import { productDataListType } from '@/types/ResponseDataTypes';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 
 export default function ProductList({
   data,
@@ -55,7 +55,9 @@ export default function ProductList({
     <>
       <ul className="grid grid-cols-2 gap-4 w-full px-4">
         {data.map((product) => (
-          <ProductCardItem key={product.productCode} product={product} />
+          <Suspense key={product.productCode} fallback={<div>Loading...</div>}>
+            <ProductCardItem product={product} />
+          </Suspense>
         ))}
       </ul>
       <div className="bg-red-400 text-white w-full px-4 p-4" ref={loaderRef}>
