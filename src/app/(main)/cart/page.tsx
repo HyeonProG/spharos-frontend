@@ -1,21 +1,22 @@
 import { getCartData } from '@/actions/cart-service';
-import { cartListDataType } from '@/types/ResponseDataTypes';
+import CartList from '@/components/pages/cart/CartList';
+import CartListAllChecker from '@/components/pages/cart/CartListAllChecker';
 import React from 'react';
 
 export default async function page() {
   const cartData = await getCartData();
+  const totalPrice = cartData.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
+  const allChecked = cartData.every((item) => item.checked);
+  console.log('cartData', cartData);
+  console.log('totalPrice', totalPrice);
+  console.log('allChecked', allChecked);
   return (
-    <div>
-      {cartData.map((item: cartListDataType) => (
-        <div
-          key={item.id}
-          className="px-3 py-10 w-full bg-slate-300 text-center"
-        >
-          <p>상품이름 : {item.name}</p>
-          <p>상품개수 : {item.quantity}</p>
-          <p>상품가격 : {item.price}</p>
-        </div>
-      ))}
-    </div>
+    <main className="w-full">
+      <CartListAllChecker checked={allChecked} />
+      <CartList data={cartData} />
+      <p className="text-3xl text-center">total: {totalPrice}</p>
+    </main>
   );
 }
